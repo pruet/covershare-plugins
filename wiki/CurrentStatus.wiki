@@ -2,7 +2,14 @@
 #labels Featured
 
 =Music player support=
-* iTunes
+  * iTunes 
+    * Features
+      * The script will check the album name first, then artist name
+      * If multiple albums matched, a list will be shown to user to be selected.
+      * Cached implemented, image is retrieved only once for each album
+      * Support multiple selection
+    * Known bugs 
+      * Conversion problem with some picture
 
-=Planned=
+=Planned support=
 * Songbird
