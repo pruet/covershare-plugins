@@ -1,0 +1,8 @@
+#summary Current status of this project
+#labels Featured
+
+=Music player support=
+* iTunes
+
+=Planned=
+* Songbird
