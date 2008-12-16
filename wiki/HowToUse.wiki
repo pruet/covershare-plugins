@@ -1,0 +1,9 @@
+#summary How to use [CoverShare] plugins
+#labels Featured,Phase-Support
+
+= [CoverShare] Plugins for iTunes =
+  # First, you can use this [http://dougscripts.com/itunes/scripts/ss.php?sp=trackswithoutartwork script] to find track without artwork.
+  # Select the tracks you want to find the artwork, select select menu Script->Search CoverShare for Artwork
+  # Then, the script will ask for confirmation. 
+  # If the script found multiple matched artwork, it will show the list of matched and ask for selection.
+  # When all tracks are checked, the script will show "Finished" dialog.
