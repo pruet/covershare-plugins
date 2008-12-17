@@ -9,8 +9,13 @@
         * If multiple albums matched, a list will be shown to user to be selected.
         * Cached implemented, image is retrieved only once for each album
         * Support multiple selection
-      * Known bugs 
-        * There are report of conversion problem with some pictures, can't reproduce yet.
-
-=Planned support=
-* Songbird
+      * Todo
+        * Fix conversion problem
+  * Songbird
+    * Version 0.1.0 ; Release Date: Dec 17, 2008
+      * Features
+        * The script will check both album name and artist name
+        * No cache implementation, cover art will be always retrieved from covershare.com server.
+        * Cover art image are *not* saved locally
+      * Todo
+        * Store cover art image locally
