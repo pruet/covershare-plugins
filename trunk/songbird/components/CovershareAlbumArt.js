@@ -37,8 +37,7 @@ CovershareAlbumArt.prototype.findAlbumArt = function(artistName, albumName) {
       return this._recentImage;
     }
     
-    //var url = "http://www.covershare.com/api/search.php?artist=" + escape(artistName) + "&album=" + escape(albumName);
-var url = "http://www.covershare.com/api/search.php?artist=" + artistName.replace("&", "&amp;").replace(" ", "+") + "&album=" + albumName.replace("&", "&amp;").replace(" ","+");
+	var url = "http://www.covershare.com/api/search.php?artist=" + artistName.replace("&", "&amp;").replace(" ", "+") + "&album=" + albumName.replace("&", "&amp;").replace(" ","+");
     var request = Cc["@mozilla.org/xmlextras/xmlhttprequest;1"].createInstance(Ci.nsIXMLHttpRequest);
     request.open("GET", url, false);
 
