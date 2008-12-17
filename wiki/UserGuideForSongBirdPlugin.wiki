@@ -1,0 +1,12 @@
+#summary How to use CoverShare plugin for Song Bird
+#labels Featured,Phase-Support
+
+
+After installing CoverShare plugin and restart your songbird, you need to do following to enable the plugin
+
+http://farm4.static.flickr.com/3293/3115573046_bf3b5d72da_o.jpg
+
+
+  * First, you need to enable the service pane but click at the small icon on the lower-left of the screen. Look at the picture above, it's pointed by the first arrow.
+  * Second, after the service pan is shown, you have to click at another small icon, pointed by second arrow. This icon will show the list of album art providers.
+  * Finally, click at CoverShare Album Art to enable the plugin.
