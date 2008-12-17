@@ -3,13 +3,14 @@
 
 =Music player support=
   * iTunes 
-    * Features
-      * The script will check the album name first, then artist name
-      * If multiple albums matched, a list will be shown to user to be selected.
-      * Cached implemented, image is retrieved only once for each album
-      * Support multiple selection
-    * Known bugs 
-      * Conversion problem with some picture
+    * Version 0.1 ; Release Date: Dec 16, 2008
+      * Features
+        * The script will check the album name first, then artist name
+        * If multiple albums matched, a list will be shown to user to be selected.
+        * Cached implemented, image is retrieved only once for each album
+        * Support multiple selection
+      * Known bugs 
+        * There are report of conversion problem with some pictures, can't reproduce yet.
 
 =Planned support=
 * Songbird
