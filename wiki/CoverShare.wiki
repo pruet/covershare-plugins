@@ -2,4 +2,4 @@
 #labels Featured
 
 = Introduction =
-[http://www.covershare.com/ CoverShare] is an online service providing collection of cover art, especially, for Thai artists. The cover art picture size is less than 300x300, to make it fit with [http://en.wikipedia.org/wiki/Fair_use Fair use]. CoverShare provides a set of http://www.covershare.com/api/ API] which allows applications and scripts to access its image collection. 
+[http://www.covershare.com/ CoverShare.com] is an online service providing collection of cover art, especially, for Thai artists. The cover art picture size is less than 300x300, to make it fit with [http://en.wikipedia.org/wiki/Fair_use Fair use]. [http://www.covershare.com/ CoverShare.com] provides a set of http://www.covershare.com/api/ API] which allows applications and scripts to access its image collection. 
