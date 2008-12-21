@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE window SYSTEM "chrome://songbird/locale/songbird.dtd">
+
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  id="songbird_menu_overlay"
+  xmlns:html="http://www.w3.org/1999/xhtml"
+  xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  xmlns:xbl="http://www.mozilla.org/xbl">
+
+  <!--
+  This file is enabled by the chrome.manifest line:
+  overlay chrome://songbird/content/xul/menuOverlay.xul chrome://songbird-pauseplaystop/content/overlayMenu.xul
+  And will be applied to __ALL__ properly implemented menubar instances.
+  You can browse the menuOverlay file here:
+  http://publicsvn.songbirdnest.com/browser/trunk/app/content/xul/menuOverlay.xul
+  -->
+
+  <!-- Into the "Tools" menu, before the Prefs Separator -->
+  <menupopup id="menu_ToolsPopup">
+  <menuitem
+    label="Search CoverShare for Artwork"
+    insertbefore="menu_PrefsSeparator"
+    oncommand="onSearchCovershareForArtWork()"/>
+  </menupopup>
+
+  <script type="application/x-javascript" src="chrome://covershare-albumart/content/overlay-menu.js" />
+
+</overlay>
