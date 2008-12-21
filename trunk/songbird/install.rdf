@@ -2,10 +2,10 @@
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#"
      xmlns:songbird="http://www.songbirdnest.com/2007/addon-metadata-rdf#">
   <Description about="urn:mozilla:install-manifest">
-    <em:id>{1f11e182-3ad5-eb4f-8907-e802b5000565}</em:id>
+    <em:id>{CE34BB58-CF0D-11DD-93EA-62AD55D89593}</em:id>
     <em:type>2</em:type>
     <em:name>CoverShare Album Art</em:name>
-    <em:version>0.1.0</em:version>
+    <em:version>0.2.0</em:version>
     <em:creator>Pruet Boonma</em:creator>
     <em:description>Displays album from CoverShare.com</em:description>
     <em:iconURL>chrome://covershare-albumart/content/albumart.png</em:iconURL>
@@ -17,18 +17,5 @@
         <em:maxVersion>1.1.0pre</em:maxVersion>
       </Description>
     </em:targetApplication>
-
-    <songbird:displayPane>
-      <Description>
-        <songbird:contentTitle>CoverShare Album Art</songbird:contentTitle>
-        <songbird:contentUrl>chrome://covershare-albumart/content/pane.xul</songbird:contentUrl>
-        <songbird:contentIcon>chrome://covershare-albumart/content/as16.png</songbird:contentIcon>
-        <songbird:defaultWidth>200</songbird:defaultWidth>
-        <songbird:defaultHeight>200</songbird:defaultHeight>
-        <songbird:suggestedContentGroups>servicepane</songbird:suggestedContentGroups>
-        <songbird:showOnInstall>true</songbird:showOnInstall>
-      </Description>
-    </songbird:displayPane>
-
   </Description>
 </RDF>
