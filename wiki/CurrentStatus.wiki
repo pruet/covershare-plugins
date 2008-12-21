@@ -12,10 +12,6 @@
       * Todo
         * Fix conversion problem
   * Songbird
-    * Version 0.1.0 ; Release Date: Dec 17, 2008
+    * Version 0.2.0 ; Release Date: Dec 21, 2008
       * Features
         * The script will check both album name and artist name
-        * No cache implementation, cover art will be always retrieved from covershare.com server.
-        * Cover art image are *not* saved locally
-      * Todo
-        * Store cover art image locally
