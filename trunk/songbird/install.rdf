@@ -6,14 +6,14 @@
     <em:type>2</em:type>
     <em:name>CoverShare Album Art</em:name>
     <em:version>0.2.0</em:version>
-    <em:creator>Pruet Boonma</em:creator>
+    <em:creator>Pruet Boonma (pruetboonma@gmail.com)</em:creator>
     <em:description>Displays album from CoverShare.com</em:description>
     <em:iconURL>chrome://covershare-albumart/content/albumart.png</em:iconURL>
 
     <em:targetApplication>
       <Description>
         <em:id>songbird@songbirdnest.com</em:id>
-        <em:minVersion>1.0.0rc1</em:minVersion>
+        <em:minVersion>1.0.0</em:minVersion>
         <em:maxVersion>1.1.0pre</em:maxVersion>
       </Description>
     </em:targetApplication>
