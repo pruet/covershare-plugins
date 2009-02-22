@@ -19,7 +19,10 @@ const Cc = Components.classes;
 const Ci = Components.interfaces;
 const Cu = Components.utils;
 
+// encode to string using javascript implementation
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
+Cu.import("resource://gre/modules/JSON.jsm");
+
 
 function CovershareAlbumArt() {
   this.wrappedJSObject = this;
@@ -37,26 +40,35 @@ CovershareAlbumArt.prototype.findAlbumArt = function(artistName, albumName) {
       return this._recentImage;
     }
     
-	var url = "http://www.covershare.com/api/search.php?artist=" + artistName.replace("&", "&amp;").replace(" ", "+") + "&album=" + albumName.replace("&", "&amp;").replace(" ","+");
-    var request = Cc["@mozilla.org/xmlextras/xmlhttprequest;1"].createInstance(Ci.nsIXMLHttpRequest);
-    request.open("GET", url, false);
-
-    request.send(null);
-    if (!request.responseText) { return false; }
-	if(request.responseText == "404 Not Found") {return false;}
-	var doc = eval ('(' + request.responseText + ')');
+	var covershareApiSearchUrl = "http://www.covershare.com/api/search.php?";
+	var artist=artistName.replace("&", "&amp;").replace(" ", "+");
+	var album =albumName.replace("&", "&amp;").replace(" ","+");
+	url = covershareApiSearchUrl + "artist=" + artist + "&album=" + album;
+	
+  var request = Cc["@mozilla.org/xmlextras/xmlhttprequest;1"].createInstance(Ci.nsIXMLHttpRequest);
+  var nativeJSON = Cc["@mozilla.org/dom/json;1"].createInstance(Ci.nsIJSON);
+  
+  request.open("GET", url, false);
+  request.send(null);
+  
+  // Parse Json only if true
+  if (request.status == 200 && request.responseText && request.responseText != "404 Not Found"){
+    // Avoid using eval() since security and performance concern.    
+    var doc = nativeJSON.decode(request.responseText);
     var imageUri = doc[0].info.artwork;
-    if (imageUri) {
+    if(!imageUri) { 
+      return false;
+    }else{
       this._recentArtist = artistName;
       this._recentAlbum = albumName;
       this._recentImage = imageUri;
       return this._recentImage;
     }
-    else {
-      return false;
-    }
+  }else{
+    return false;
+  }
+  
 }
-
 
 function NSGetModule(compMgr, fileSpec) {
   return XPCOMUtils.generateModule([CovershareAlbumArt]);

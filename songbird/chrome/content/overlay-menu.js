@@ -32,20 +32,23 @@ function onSearchCovershareForArtWork() {
 		var item;
 		var imageUri;
 		var enumerator = selectedTracks.selectedMediaItems;
-		var cache = new Array();
-		while(enumerator.hasMoreElements()) {
-			item = enumerator.getNext();
-			artist = item.getProperty(SBProperties.artistName);
-			album = item.getProperty(SBProperties.albumName);
-			if(cache[artist + "::" + "album"] == undefined) {
-				imageUri= service.findAlbumArt(artist, album);
-				cache[artist + "::" + "album"] = imageUri;
-			} else {
-				imageUri = cache[artist + "::" + "album"];
-			}
-			if(imageUri) {
-				item.setProperty(SBProperties.primaryImageURL, imageUri);
-			}
-		}
+    var cache = new Array();
+    while(enumerator.hasMoreElements()) {
+     item = enumerator.getNext();
+     artist = item.getProperty(SBProperties.artistName);
+     album = item.getProperty(SBProperties.albumName);
+     imageUri= service.findAlbumArt(artist, album);
+     if(cache[artist + "::" + "album"] == undefined) {
+       imageUri= service.findAlbumArt(artist, album);
+       cache[artist + "::" + "album"] = imageUri;
+     } else {
+       imageUri = cache[artist + "::" + "album"];
+     }
+     if(imageUri) {
+       item.setProperty(SBProperties.primaryImageURL, imageUri);
+     }else{
+       alert('Could not find any album art ('+ album +') at Covershare.com');
+     }
+    }
 	}
 }
