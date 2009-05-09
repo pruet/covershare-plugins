@@ -47,7 +47,7 @@ function onSearchCovershareForArtWork() {
      if(imageUri) {
        item.setProperty(SBProperties.primaryImageURL, imageUri);
      }else{
-       alert('Could not find any album art ('+ album +') at Covershare.com');
+       alert('Cover not found at Covershare.com');
      }
     }
 	}
