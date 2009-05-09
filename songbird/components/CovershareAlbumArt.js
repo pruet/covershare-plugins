@@ -19,10 +19,7 @@ const Cc = Components.classes;
 const Ci = Components.interfaces;
 const Cu = Components.utils;
 
-// encode to string using javascript implementation
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
-Cu.import("resource://gre/modules/JSON.jsm");
-
 
 function CovershareAlbumArt() {
   this.wrappedJSObject = this;
@@ -36,20 +33,16 @@ CovershareAlbumArt.prototype = {
 }
 
 CovershareAlbumArt.prototype.findAlbumArt = function(artistName, albumName) {
-    if (this._recentArtist == artistName && this._recentAlbum == albumName) {
-      return this._recentImage;
-    }
-    
-	var covershareApiSearchUrl = "http://www.covershare.com/api/search.php?";
-	var artist=artistName.replace("&", "&amp;").replace(" ", "+");
-	var album =albumName.replace("&", "&amp;").replace(" ","+");
-	url = covershareApiSearchUrl + "artist=" + artist + "&album=" + album;
-	
+  if (this._recentArtist == artistName && this._recentAlbum == albumName) { return this._recentImage; }
   var request = Cc["@mozilla.org/xmlextras/xmlhttprequest;1"].createInstance(Ci.nsIXMLHttpRequest);
   var nativeJSON = Cc["@mozilla.org/dom/json;1"].createInstance(Ci.nsIJSON);
+  url = covershareSearchUrl(artistName, albumName);
   
   request.open("GET", url, false);
-  request.send(null);
+  try {
+     request.send(null);
+   }
+  catch (e) { return null; } // no network connection
   
   // Parse Json only if true
   if (request.status == 200 && request.responseText && request.responseText != "404 Not Found"){
@@ -72,4 +65,13 @@ CovershareAlbumArt.prototype.findAlbumArt = function(artistName, albumName) {
 
 function NSGetModule(compMgr, fileSpec) {
   return XPCOMUtils.generateModule([CovershareAlbumArt]);
+}
+
+function covershareSearchUrl(artistName, albumName){
+  var covershareApiSearchUrl = "http://www.covershare.com/api/search.php?";
+  var artist = "";
+  var album = "";
+	if(artistName != null) { artist=artistName.replace(/\&/gi, "&amp;").replace(/\s+/gi, "+"); }
+	if(albumName != null) { album=albumName.replace(/\&/gi, "&amp;").replace(/\s+/gi,"+"); }
+  return covershareApiSearchUrl + "artist=" + artist + "&album=" + album;
 }
